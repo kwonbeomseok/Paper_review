@@ -1,5 +1,5 @@
 # FleXOR
-##FleXOR: Trainable Fractional Quantization
+## FleXOR: Trainable Fractional Quantization
 paper link
 facebook link https://www.facebook.com/groups/TensorFlowKR/permalink/1309523079388747
 
