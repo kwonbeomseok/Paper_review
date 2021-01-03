@@ -1,7 +1,8 @@
 # FleXOR
 ## FleXOR: Trainable Fractional Quantization
-paper link
-facebook link https://www.facebook.com/groups/TensorFlowKR/permalink/1309523079388747
+Paper:[[link]](https://arxiv.org/abs/2009.04126)
+
+Author's explain: [[link]] (https://www.facebook.com/groups/TensorFlowKR/permalink/1309523079388747)
 
 #### Algorithm
 - fractional quantization bits( <1bit)
