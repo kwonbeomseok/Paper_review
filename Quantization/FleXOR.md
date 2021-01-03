@@ -19,7 +19,7 @@ Author's explain(Faceboook): [[link]](https://www.facebook.com/groups/TensorFlow
 
 #### cons
 - too many hyperparameters(S_tanh, N_in/N_out, N_tap?)
-
+------------------------------------------------------
 #### 논문 분석 방석
 - Fig5: 다른 방법(STE, Analog XOR)과 Test accuracy curve 비교
 - Fig6: Hyperparameter에 따른 Test accuracy curve, histogram 분석
