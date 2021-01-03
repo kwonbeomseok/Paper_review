@@ -4,7 +4,7 @@ Paper:[[link]](https://arxiv.org/abs/2009.04126)
 
 Author's explain(Faceboook): [[link]](https://www.facebook.com/groups/TensorFlowKR/permalink/1309523079388747)
 
-#### Algorithm
+### Algorithm
 - quantization aware training
 - fractional quantization bits( <1bit)
 - only weight quantization, activation is not quantized
