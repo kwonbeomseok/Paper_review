@@ -1,5 +1,5 @@
 # FleXOR
-## FleXOR: Trainable Fractional Quantization
+## FleXOR: Trainable Fractional Quantization (NeurIPS2020)
 Paper:[[link]](https://arxiv.org/abs/2009.04126)
 
 Author's explain(Faceboook): [[link]](https://www.facebook.com/groups/TensorFlowKR/permalink/1309523079388747)
