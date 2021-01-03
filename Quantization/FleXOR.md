@@ -13,10 +13,10 @@ Author's explain(Faceboook): [[link]](https://www.facebook.com/groups/TensorFlow
 - weight 값을 encrypted weight로 저장한 후 forward시 XOR-gate를 통과시켜(convert, reshape) convolution 진행 후 backward로 encrypted weight 학습
 - backward시 tanh, scale factor를 이용한 방법 사용
 - train시 LR뿐만 아니라 S_tanh도 warmup 사용
-
+- - -
 #### pros
 - memory footprint is less than binary network
-
+- - -
 #### cons
 - too many hyperparameters(S_tanh, N_in/N_out, N_tap?)
 ------------------------------------------------------
