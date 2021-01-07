@@ -21,6 +21,7 @@ Author's explain(Faceboook): [[link]](https://www.facebook.com/groups/TensorFlow
 #### cons
 - too many hyperparameters(S_tanh, N_in/N_out, N_tap?)
 - S_tanh is optimized by empirically
+- Model이 별로 없다(ImageNet은 ResNet18만 존재)
 - - -
 #### 논문 분석 방식
 - Fig5: 다른 방법(STE, Analog XOR)과 Test accuracy curve 비교
