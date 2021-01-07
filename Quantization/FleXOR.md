@@ -6,13 +6,14 @@ Author's explain(Faceboook): [[link]](https://www.facebook.com/groups/TensorFlow
 - - -
 #### Algorithm
 - quantization aware training
-- fractional quantization bits( <1bit)
+- fractional bits quantization < 1bit
 - only weight quantization, activation is not quantized
 - first, last layer are not quantized
 - non-uniform precision quantization(결국 convolution은 1bit)
+- N_tap be the number of 1’s in a row of M
 - weight 값을 encrypted weight로 저장한 후 forward시 XOR-gate를 통과시켜(convert, reshape) convolution 진행 후 backward로 encrypted weight 학습
-- backward시 tanh, scale factor를 이용한 방법 사용
-- train시 LR뿐만 아니라 S_tanh도 warmup 사용
+- backward시 STE대신 tanh + scale factor를 이용한 방법 사용
+- train시 weight뿐만 아니라 S_tanh도 warmup 사용
 - - -
 #### pros
 - memory footprint is less than binary network
@@ -50,6 +51,6 @@ Author's explain(Faceboook): [[link]](https://www.facebook.com/groups/TensorFlow
 - - -
 #### 찾아볼 개념, 논문
 - XOR-gate 이전 논문 볼 필요 있을 듯
-- Hamming distance
+- Hamming distance : [[link]](https://ko.wikipedia.org/wiki/%ED%95%B4%EB%B0%8D_%EA%B1%B0%EB%A6%AC#:~:text=%EB%B8%94%EB%A1%9D%20%EB%B6%80%ED%98%B8%20%EC%9D%B4%EB%A1%A0%EC%97%90%EC%84%9C%2C%20%ED%95%B4%EB%B0%8D,%EB%93%A4%EC%9D%B4%20%EB%AA%87%20%EA%B0%9C%EC%9D%B8%EC%A7%80%EB%A5%BC%20%EC%84%BC%EB%8B%A4)
 - tanh derivative for backward
 
