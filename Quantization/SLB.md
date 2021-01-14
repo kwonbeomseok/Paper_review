@@ -1,6 +1,7 @@
 # SLM
 ## Searching for Low-Bit Weights in Quantized Neural Networks)
 Paper:[[link]](https://proceedings.neurips.cc/paper/2020/file/2a084e55c87b1ebcdaad1f62fdbbac8e-Paper.pdf)
+
 Code: [[linek]](https://github.com/huawei-noah/Binary-Neural-Networks/tree/main/SLB)
 - - -
 #### Algorithm
