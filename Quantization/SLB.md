@@ -27,7 +27,9 @@ Code: [[linek]](https://github.com/huawei-noah/Binary-Neural-Networks/tree/main/
 #### 다른 논문과의 비교 방식
 - Table 1,2. CIFAR10-ResNet20, VGG-small / Quantization Accuracy 비교(1/1, 2/2, 4/4, ...)
 - Table 3. ImageNet-ResNet18 / Bits에 따른 Accuracy 비교
+
   -> 다른 모델은 왜 없는지
+  
   -> LSQ 성능 빠짐
 - Fig3. Super Resolution 비교 
 - - -
