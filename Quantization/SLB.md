@@ -3,6 +3,7 @@
 Paper:[[link]](https://proceedings.neurips.cc/paper/2020/file/2a084e55c87b1ebcdaad1f62fdbbac8e-Paper.pdf)
 
 Code: [[link]](https://github.com/huawei-noah/Binary-Neural-Networks/tree/main/SLB)
+    --> There is no code.
 - - -
 #### Algorithm
 - using continuous relaxation instead of STE
@@ -46,7 +47,8 @@ Code: [[link]](https://github.com/huawei-noah/Binary-Neural-Networks/tree/main/S
 - Weight quantization method가 궁금함.
 - NAS에서 항상 생각하던 부분을 실제로 논문으로 낸 부분이 재미있었음.
 - 아이디어가 있으면 빨리 실행해야 한다...
+- Quantization에 대한 detail이 많이 빠져있다.
 - - -
 #### 찾아볼 개념, 논문
-- 
+- SoftMax temperature
 
