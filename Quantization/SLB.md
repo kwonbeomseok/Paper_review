@@ -40,6 +40,7 @@ Code: [[link]](https://github.com/huawei-noah/Binary-Neural-Networks/tree/main/S
 - - -
 #### 의문점
 - index는 softmax의 maximum value로 정하는건 알겠는데 scale factor는 어떤 방식으로 구하는건지?
+- Quantization distribution이 per weight, channel, layer?
 - SBN이 왜 좋은건지? gap을 줄여줘서?
 - pretrain부터 시작?
 - - -
