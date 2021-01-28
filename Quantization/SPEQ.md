@@ -6,46 +6,39 @@ Paper:[[link]](https://arxiv.org/abs/2009.14502)
 #### Algorithm
 - Quantization aware training with KD
 - KD를 사용할 때 따로 Teacher model이 존재하지 않고 같은 모델을 high bit precision으로 만든 모델을 통해 KD를 진행한다.
-- ![speq](https://user-images.githubusercontent.com/49312486/106075066-481bee00-6150-11eb-99c8-efd665330d34.png)
+ ![speq](https://user-images.githubusercontent.com/49312486/106075066-481bee00-6150-11eb-99c8-efd665330d34.png)
+- 위 그림처럼 n_A bit는 student의 target bit, n_H는 Teacher model의 high precision.
+- Teacher model의 high precision을 항상 선택하는 것이 아닌 stochastic하게 선택을 하게 된다.
+- KD loss를 학습할 때 KL Divergence가 아닌 Cosine Similarity를 사용한다.
+    --> Teacher model의 output의 confidence가 항상 높지않기 때문에 KL보다는 Cosine이 confidence에 따라 적절히 학습시켜 줄 수 있다.
+- 
 - - -
 #### pros
-- memory footprint is less than binary network
+- Model sharing하므로 추가적인 model이 필요하지 않다
 - - -
 #### cons
-- too many hyperparameters(S_tanh, N_in/N_out, N_tap?)
-- S_tanh is optimized by empirically
-- Model이 별로 없다(ImageNet은 ResNet18만 존재)
+- 왜 잘 동작하는지에 대한 이유가 없다
 - - -
 #### 논문 분석 방식
-- Fig5: 다른 방법(STE, Analog XOR)과 Test accuracy curve 비교
-- Fig6: Hyperparameter에 따른 Test accuracy curve, histogram 분석
-- Fig7: Hyperparameter에 따른 Test accuracy curve
-- Table2: stage별로 다른 XOR-gate 사용시 accuracy 
+- Table1: Motivation
+- Fig2: precision에 따른 다양한 softmax, 8bit ratio 분석
+- Fig3: KL, CS Loss의 gradient 분석 (CS가 더 적합한 이유 설명)
+- Table2: 여러가지 KD configure에 대한 결과 (CS, u=0.5가 제일 좋다는 결과)
+- Table3: hyperparameter sweep experiment (hyperparameter의 sweet spot 찾음)
 - - -
 #### 다른 논문과의 비교 방식
-- Table1: ResNet20, ResNet32, FP, quantized acc compare
-	-> FP자체가 낮음, memory를 줄이긴 했으나 다른모델(LQ-Net, DSQ) 보다 accuracy가 1~2% 떨어짐
-- Table3: 마찬가지로 accuracy 비교
+- Table4: 다른 방법들과 성능 비교 (CIFAR10-VGG16, ResNet20 / CIFAR100-ResNet32, MobileNetV2)
+- Table5: 다른 방법들과 성능 비교 (ImageNet-AlexNet, ResNet18, ResNet34)
 - - -
 #### 흥미로운 점
-- XOR-Gate 1개를 Network 전체에 공유해서 사용한다고 했는데 가능한건지
-- backward시 STE가 아닌 tanh를 사용한 부분
+- 항상 Teacher model이 좋지 않아도 KD 학습이 가능한 부분
 - - -
 #### 의문점
-- XOR-Gate의 조합은 어떻게 결정되는지
-- Algorithm1을 보면 weight의 갯수= k * k * C_in * C_out에다가 /N_out, * N_in하는데 그러면 총 #weight가 줄어드는 것 아닌가?, For 문을 보면 reshape하는데 가능한건지
-- Is shorcut quantized?
-- 논문에서는 XOR-gate의 area, latency overhead가 무시할 정도라고 하는데 어느정도인지 궁금
-- binary quantization이라서 더이상 가속이 의미가 없어서 memory를 줄이는 방식에 대한 연구를 진행한다고 생각해야 하는듯?
+- Activation quantization이 Noise라면 high precision model을 teacher로 사용한다는게 Student를 다양한 noise에 대해 학습을 시킨다고 생각함. 그러면 왜 다양한 노이즈를 통해 학습한 모델이 성능이 좋아지는건지?
 - - -
 #### 총평
-- binary network보다 더 줄일 수 있다고 생각을 못해봤는데 그 가능성을 보여줘서 재미있었던 논문
-- Weight quantization만 진행해서 아쉬움
-- 이전 논문(XOR-gate network)을 알아야 좀 더 제대로 이해할 수 있을 듯
-- 알고리즘 혹은 다른 논문과의 비교에서 주로 test accuracy만을 metric으로 사용했는데 다른 방법은 없는지?(나도 지금은 생각나는게 없음. 다른 논문 읽으면서 생각해보기. quantization 전체에 대한 생각이 될 수도)
+- KD에 대해 많이 알지는 못하지만 기존에 알고 있던 Teacher model이 좋아야한다는 생각을 사라지게 해준 논문이었다.
 - - -
 #### 찾아볼 개념, 논문
-- XOR-gate 이전 논문 볼 필요 있을 듯
-- Hamming distance : [[link]](https://ko.wikipedia.org/wiki/%ED%95%B4%EB%B0%8D_%EA%B1%B0%EB%A6%AC#:~:text=%EB%B8%94%EB%A1%9D%20%EB%B6%80%ED%98%B8%20%EC%9D%B4%EB%A1%A0%EC%97%90%EC%84%9C%2C%20%ED%95%B4%EB%B0%8D,%EB%93%A4%EC%9D%B4%20%EB%AA%87%20%EA%B0%9C%EC%9D%B8%EC%A7%80%EB%A5%BC%20%EC%84%BC%EB%8B%A4)
-- tanh derivative for backward
+- 
 
