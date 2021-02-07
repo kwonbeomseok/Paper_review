@@ -32,5 +32,5 @@ Supplemental:[[link]](https://proceedings.neurips.cc/paper/2020/file/d77c7035367
 - 
 - - -
 #### 찾아볼 개념, 논문
-- HAWQ-V1
+- HAWQ-V1  
 
