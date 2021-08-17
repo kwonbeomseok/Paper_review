@@ -9,6 +9,7 @@ Paper:[[link]](https://https://openreview.net/forum?id=rkgO66VKDS)
 - Quantizer
 ![image](https://user-images.githubusercontent.com/49312486/129680626-7103f585-9910-4cad-8ea7-befccf55e0f4.png)
 $v$ is given data
+![image](https://user-images.githubusercontent.com/49312486/129681338-d49bc42b-3fb8-4a0b-9414-44d34b079f5c.png)
 - - -
 #### pros
 - 
