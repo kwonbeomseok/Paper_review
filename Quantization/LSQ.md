@@ -6,7 +6,9 @@ Paper:[[link]](https://https://openreview.net/forum?id=rkgO66VKDS)
 
 - - -
 #### Algorithm
-- 
+- Quantizer
+![image](https://user-images.githubusercontent.com/49312486/129680626-7103f585-9910-4cad-8ea7-befccf55e0f4.png)
+
 - - -
 #### pros
 - 
